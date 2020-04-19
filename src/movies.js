@@ -45,8 +45,18 @@ const orderAlphabetically = (array) => {
     return newArray;
 };
 
-console.log(orderAlphabetically(movies))
+//console.log(orderAlphabetically(movies))
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-const turnHoursToMinutes = (array) => {};
+const turnHoursToMinutes = (array) => {
+    const time = array.filter((movie) => {
+        let newArray = movie.duration
+            .replace('h', '')
+            .replace('min', '');    
+        console.log(newArray);
+        //let newNumber = parseInt(newArray, 10);
+        //return 
+
+    })
+};
 // BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
 const bestYearAvg = (array) => {};
