@@ -9,25 +9,14 @@ const howManyMovies = (array) => array
     .filter((movie) => movie.director === 'Steven Spielberg' && movie.genre.includes('Drama'))
     .length;  
 //console.log(howManyMovies(movies));
-// Iteration 3: All rates average - Get the average of all rates with 2 decimals - could not finish
+// Iteration 3: All rates average - Get the average of all rates with 2 decimals 
 const ratesAverage = (array)  => {
-    if (array.length === 0) {
-      return 0;
-    }
-    const rates = array
-      .map((movie) => movie.rate)
-      // .filter(rate => typeof rate === 'number');
-      .map((rate) => {
-        if (typeof rate === 'number') {
-          return rate;
-        } else {
-          return 0;
-        }
-      });
-    const sumOfAllRates = rates.reduce((accumulator, rate) => accumulator + rate, 0);
-    const averageRate = sumOfAllRates / rates.length;
-
-    return Number(averageRate.toFixed(2));
+    if (!array.length) return 0;
+    const rate = array
+        .map((movie) => movie.rate)
+        .map((rate) => typeof rate === 'number' ? rate : 0);
+    const avgRates = (rate.reduce((acc, rate) => acc + rate, 0)) / rate.length;
+    return Number(avgRates.toFixed(2));
 }
 //console.log(ratesAverage(movies));
 // Iteration 4: Drama movies - Get the average of Drama Movies
