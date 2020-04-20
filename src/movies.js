@@ -16,7 +16,8 @@ const ratesAverage = (array)  => {
         .map((movie) => movie.rate)
         .map((rate) => typeof rate === 'number' ? rate : 0);
     const avgRates = (rate.reduce((acc, rate) => acc + rate, 0)) / rate.length;
-    return Number(avgRates.toFixed(2));
+    const roundAvg = Math.round(avgRates * 10 ** 2) / 10 ** 2; //It gets a number to two decimals
+    return roundAvg;
 }
 //console.log(ratesAverage(movies));
 // Iteration 4: Drama movies - Get the average of Drama Movies
